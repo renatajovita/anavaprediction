@@ -262,7 +262,7 @@ def main():
             # Standardize the data
             scaler = None
             try:
-                with open("E:\\DOWNLOAD\\scaler.pkl", 'rb') as f:
+                with open("scaler.pkl", 'rb') as f:
                     scaler = pickle.load(f)
             except FileNotFoundError:
                 pass
@@ -281,7 +281,7 @@ def main():
             processed_data = st.session_state.processed_data
 
             # Load the model and make the prediction
-            model = pickle.load(open("E:\\DOWNLOAD\\voting_classifier_model.pkl", "rb"))
+            model = pickle.load(open("voting_classifier_model.pkl", "rb"))
             prediction = model.predict(processed_data)
 
             # Display the prediction
